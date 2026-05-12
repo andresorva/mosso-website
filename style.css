@@ -1,0 +1,339 @@
+/* Mosso website — paper-zen design system */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Light mode (default) */
+  --bg-primary: #BCD8C1;        /* Celadon */
+  --bg-surface: #D4E5D8;        /* Celadon Light */
+  --bg-elevated: #E8F0EA;       /* Celadon Pale */
+  --text-primary: #2D3047;      /* Space Indigo */
+  --text-secondary: #4A4D63;    /* Indigo Soft */
+  --text-muted: #9A8F97;        /* Rosy Granite */
+  --border-subtle: rgba(154, 143, 151, 0.30);
+  --action: #297373;            /* Pine Blue */
+  --success: #6B9B6B;           /* Forest Green */
+  --warm: #D4A04F;              /* Mossy Gold */
+  --magic: #E5BEED;             /* Pink Orchid */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #2D3047;
+    --bg-surface: #3A3D55;
+    --bg-elevated: #474A63;
+    --text-primary: #E8F0EA;
+    --text-secondary: #BCD8C1;
+    --text-muted: #9A8F97;
+    --border-subtle: rgba(154, 143, 151, 0.30);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+h1 { font-size: 3rem; margin-bottom: 1rem; }
+h2 { font-size: 2rem; margin-bottom: 0.75rem; margin-top: 2rem; }
+h3 { font-size: 1.5rem; margin-bottom: 0.5rem; margin-top: 1.5rem; }
+h4 { font-size: 1.25rem; margin-bottom: 0.5rem; margin-top: 1rem; }
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--action);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+a:hover {
+  border-bottom-color: var(--action);
+}
+
+ul, ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+}
+
+li { margin-bottom: 0.5rem; }
+
+strong { color: var(--text-primary); font-weight: 600; }
+
+/* Layout */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.container-wide {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Header / Nav */
+header {
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 1rem 1.5rem;
+}
+
+.nav {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--action);
+  border: none;
+}
+
+.nav-brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  border: none;
+}
+
+.nav-links a:hover {
+  color: var(--action);
+}
+
+/* Hero (index.html) */
+.hero {
+  text-align: center;
+  padding: 4rem 1.5rem 3rem;
+}
+
+.hero-icon {
+  width: 140px;
+  height: 140px;
+  border-radius: 28px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 24px rgba(45, 48, 71, 0.12);
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-tagline {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--action);
+  color: var(--bg-elevated);
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 12px;
+  border: none;
+  transition: opacity 0.2s ease;
+}
+
+.hero-cta:hover {
+  opacity: 0.92;
+  border: none;
+}
+
+.hero-cta-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.hero-secondary {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Features grid */
+.features {
+  padding: 2rem 1.5rem 4rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.feature-card {
+  background-color: var(--bg-surface);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+}
+
+.feature-card h3 {
+  font-size: 1.15rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--action);
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* Legal pages */
+.legal {
+  padding: 3rem 1.5rem 5rem;
+}
+
+.legal h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.legal .updated {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.legal h2 {
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.5rem;
+  margin-top: 2.5rem;
+}
+
+.legal-section {
+  margin-bottom: 2rem;
+}
+
+.legal-callout {
+  background-color: var(--bg-surface);
+  border-left: 4px solid var(--action);
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.legal-callout p:last-child { margin-bottom: 0; }
+
+/* Footer */
+footer {
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-subtle);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+footer .footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+footer a {
+  color: var(--text-secondary);
+  border: none;
+}
+
+footer a:hover {
+  color: var(--action);
+}
+
+footer .made-with {
+  color: var(--text-muted);
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.5rem; }
+  .hero-title { font-size: 2.5rem; }
+  .hero-tagline { font-size: 1.1rem; }
+  .hero-icon { width: 110px; height: 110px; }
+  .nav-links { gap: 1rem; font-size: 0.85rem; }
+  .container, .container-wide { padding: 1.5rem 1rem; }
+}
+
+/* 404 page */
+.error-page {
+  text-align: center;
+  padding: 6rem 1.5rem;
+}
+
+.error-page .big-number {
+  font-family: 'Fraunces', serif;
+  font-size: 8rem;
+  font-weight: 700;
+  color: var(--action);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
